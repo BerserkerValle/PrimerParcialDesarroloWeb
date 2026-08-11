@@ -9,41 +9,32 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-// Parsear requests de tipo application/json
 app.use(bodyParser.json());
 
-// Parsear requests de tipo application/x-www-form-urlencoded
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 db.sequelize.sync();
-// // Si necesitas recrear las tablas desde cero (¡cuidado, borra los datos!):
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
 
-// Ruta simple de prueba
+
 app.get("/", (req, res) => {
-  res.json({ message: "Si funco" });
+  res.json({ message: "primer parcial Francisco Rene Samayoa Valle SI FUNCO" });
 });
 
 require("./app/routes/cliente.route")(app);
 require("./app/routes/auth.route")(app);
-// aqui se agrego la ruta de  authJwt para proteger las rutas que lo requieran
-// Si agregas más recursos (ej. tutorial), regístralos igual:
-// require("./app/routes/tutorial.route")(app);
 
-// Set port, listen for requests
+
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
-// En server.js, ANTES de app.use(bodyParser.json())
+
 app.post("/api/pago/webhook", express.raw({ type: "application/json" }),
   require("./app/controllers/pago.controller.js").webhook
 );
 
-// Después, el resto de rutas normales:
+
 app.use(bodyParser.json());
-require("./app/routes/pago.route")(app); // el resto de rutas de pago (crear-sesion) sí usa JSON normal
+require("./app/routes/pago.route")(app); 

@@ -12,7 +12,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false
     },
     password: {
-      // Aquí NUNCA se guarda la contraseña en texto plano, solo su hash (ver 12.4)
+    
       type: Sequelize.STRING,
       allowNull: false
     }
