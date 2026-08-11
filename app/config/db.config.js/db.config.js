@@ -1,7 +1,7 @@
 module.exports = {
   DATABASE_URL:
     process.env.DATABASE_URL ||
-    'postgresql://neondb_owner:npg_HsEpRQz9lU5V@ep-solitary-bonus-ayinz3y3-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require',
+    'postgresql://neondb_owner:npg_Ag4BlE6ZyROh@ep-flat-frost-axf8kb8i-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require',
   pool: {
     max: 5,
     min: 0,
