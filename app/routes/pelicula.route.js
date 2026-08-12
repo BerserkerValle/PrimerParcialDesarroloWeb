@@ -1,7 +1,7 @@
 // app/routes/pelicula.route.js
 module.exports = app => {
   const peliculas = require("../controllers/pelicula.controller.js");
-  const { verifyToken } = require("../middlewares/authJwt.js");
+  const { verifyToken } = require("../../middlewares/authJwt.js");
   var router = require("express").Router();
 
   // Crear una nueva película (requiere autenticación)
