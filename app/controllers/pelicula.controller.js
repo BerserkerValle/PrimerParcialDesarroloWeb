@@ -3,7 +3,7 @@ const db = require("../models");
 const Pelicula = db.peliculas;
 const Op = db.Sequelize.Op;
 
-// CREATE - Crear una nueva película
+
 exports.create = (req, res) => {
   if (!req.body.nombre || !req.body.duracion || !req.body.tipo || !req.body.categoria || !req.body.anioLanzamiento) {
     return res.status(400).send({
@@ -37,7 +37,7 @@ exports.create = (req, res) => {
     });
 };
 
-// READ ALL - Obtener todas las películas
+
 exports.findAll = (req, res) => {
   const nombre = req.query.nombre;
   const categoria = req.query.categoria;
@@ -73,7 +73,7 @@ exports.findAll = (req, res) => {
     });
 };
 
-// READ ONE - Obtener una película por ID
+
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
@@ -96,7 +96,7 @@ exports.findOne = (req, res) => {
     });
 };
 
-// UPDATE - Actualizar una película
+
 exports.update = (req, res) => {
   const id = req.params.id;
 
@@ -125,7 +125,7 @@ exports.update = (req, res) => {
     });
 };
 
-// DELETE - Eliminar una película
+
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -150,7 +150,6 @@ exports.delete = (req, res) => {
     });
 };
 
-// DELETE ALL - Eliminar todas las películas (solo para desarrollo)
 exports.deleteAll = (req, res) => {
   Pelicula.destroy({
     where: {},

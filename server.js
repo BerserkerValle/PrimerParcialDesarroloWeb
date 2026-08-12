@@ -4,7 +4,6 @@ const cors = require("cors");
 
 const app = express();
 
-// CORS configuration - permite cualquier origen en desarrollo, especificar en producción
 var corsOptions = {
   origin: process.env.CORS_ORIGIN || "*",
   credentials: true
@@ -21,8 +20,7 @@ db.sequelize.sync();
 // Ruta raíz
 app.get("/", (req, res) => {
   res.status(200).json({ 
-    message: "API Netflix - Francisco Rene Samayoa Valle",
-    version: "1.0.0",
+    message: "Si funco amen Francisco rene Samayoa valle",
     endpoints: {
       auth: "/api/auth",
       peliculas: "/api/peliculas"
@@ -34,12 +32,10 @@ app.get("/", (req, res) => {
 require("./app/routes/auth.route")(app);
 require("./app/routes/pelicula.route")(app);
 
-// Health check para Render
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK" });
 });
 
-// Manejo de rutas no encontradas
 app.use((req, res) => {
   res.status(404).json({ message: "Ruta no encontrada" });
 });
