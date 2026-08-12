@@ -1,10 +1,11 @@
 {
-  "name": "nodejs-express-postgresql",
+  "name": "netflix-api",
   "version": "1.0.0",
-  "description": "Node.js api rapida con sequelize y postgres",
+  "description": "API RESTful para gestionar películas y series con autenticación JWT",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,7 +14,10 @@
     "sequelize",
     "postgresql",
     "rest",
-    "api"
+    "api",
+    "jwt",
+    "movies",
+    "netflix"
   ],
   "author": "Francisco Rene Samayoa Valle UMG",
   "license": "ISC",
@@ -25,7 +29,9 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.22.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.8",
-    "stripe": "^22.4.0"
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

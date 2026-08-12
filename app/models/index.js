@@ -27,7 +27,7 @@ db.sequelize = sequelize;
 
 
 db.usuarios = require("./usuario.model.js")(sequelize, Sequelize);
-db.clientes = require("./cliente.model.js")(sequelize, Sequelize);
+db.peliculas = require("./pelicula.model.js")(sequelize, Sequelize);
 
 
 module.exports = db;
