@@ -21,11 +21,7 @@ db.sequelize.sync();
 app.get("/", (req, res) => {
   res.status(200).json({ 
     message: "Si funco amen Francisco rene Samayoa valle",
-    endpoints: {
-      auth: "/api/auth",
-      peliculas: "/api/peliculas"
-    }
-  });
+    });
 });
 
 // Rutas
